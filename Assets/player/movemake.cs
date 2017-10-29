@@ -6,6 +6,7 @@ public class movemake : MonoBehaviour
 {
     public float SpeedX;
     public float SpeedY;
+    public GameObject gameoverui;
 
 	// Use this for initialization
 	void Start ()
@@ -49,4 +50,14 @@ public class movemake : MonoBehaviour
         }
 		
 	}
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.tag == "enemy")
+        {
+            Destroy(gameObject);
+            Destroy(collider.gameObject);
+            gameoverui.SetActive(true);
+        }
+    }
 }
