@@ -7,6 +7,8 @@ public class deobject : MonoBehaviour
     public GameObject SomePefab;
     public float delay;
     float time;
+    public int killcount;
+    public int boss;
 	
 	void Update ()
     {

@@ -19,6 +19,8 @@ public class demove : MonoBehaviour
         newPosition.y -= SpeedY * Time.deltaTime;
 
         transform.position = newPosition;
+        if (transform.position.y <= -5.5f)
+            Destroy(gameObject);
     }
     
 }

@@ -48,12 +48,16 @@ public class movemake : MonoBehaviour
 
             transform.position = newPosition;
         }
-		
+        float x = transform.position.x;
+        float y = transform.position.y;
+        x = Mathf.Clamp(x, -8.2f, 8.2f);
+        y = Mathf.Clamp(y, -5.0f, 5.0f);
+        transform.position = new Vector3(x, y);
 	}
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.tag == "enemy")
+        if (collider.tag == "enemy" || collider.tag == "enemybullet")
         {
             Destroy(gameObject);
             Destroy(collider.gameObject);

@@ -26,6 +26,8 @@ public class bangmove : MonoBehaviour
         {
             Destroy(gameObject);
             Destroy(collider.gameObject);
+            GameObject maker = GameObject.FindGameObjectWithTag("enemymaker");
+            maker.GetComponent<deobject>().killcount++;
         }
     }
 }
