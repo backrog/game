@@ -9,10 +9,11 @@ public class deobject : MonoBehaviour
     float time;
     public int killcount;
     public int boss;
-	
+    public GameObject bossprefab;
+    bool bossspawn;
 	void Update ()
     {
-        if (time >= delay)
+        if (!bossspawn && time >= delay)
         {
             time = 0;
             GameObject newfrefeb = Instantiate(SomePefab);
@@ -24,5 +25,10 @@ public class deobject : MonoBehaviour
             newfrefeb.transform.position = randomPos;
         }
         time += Time.deltaTime;
+        if (killcount >= boss && !bossspawn)
+        {
+            Instantiate(bossprefab);
+            bossspawn = true;
+        }
     }
 }

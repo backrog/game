@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class debang : MonoBehaviour
 {
-    public GameObject Someprfeb;
+    public GameObject Someprefeb;
     public float delay;
     float time;
 
@@ -18,7 +18,7 @@ public class debang : MonoBehaviour
         if (time >= delay)
         {
             time = 0;
-            GameObject newfrefeb = Instantiate(Someprfeb);
+            GameObject newfrefeb = Instantiate(Someprefeb);
             newfrefeb.transform.position = transform.position;
         }
         time += Time.deltaTime;
