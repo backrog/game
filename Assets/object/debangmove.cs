@@ -32,7 +32,6 @@ public class debangmove : MonoBehaviour
         if (collider.tag == "player")
         {
             Destroy(gameObject);
-            Destroy(collider.gameObject);
         }
     }
 }

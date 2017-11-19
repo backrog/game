@@ -6,7 +6,6 @@ public class movemake : MonoBehaviour
 {
     public float SpeedX;
     public float SpeedY;
-    public GameObject gameoverui;
 
 	// Use this for initialization
 	void Start ()
@@ -59,9 +58,7 @@ public class movemake : MonoBehaviour
     {
         if (collider.tag == "enemy" || collider.tag == "enemybullet")
         {
-            Destroy(gameObject);
-            Destroy(collider.gameObject);
-            gameoverui.SetActive(true);
+            GetComponent<player>().damage();
         }
     }
 }

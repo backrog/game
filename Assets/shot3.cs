@@ -6,6 +6,8 @@ public class shot3 : MonoBehaviour
 {
     public float SpeedY;
     public Vector3 direction;
+    public int hp;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -26,7 +28,6 @@ public class shot3 : MonoBehaviour
         if (collider.tag == "player")
         {
             Destroy(gameObject);
-            Destroy(collider.gameObject);
         }
     }
 }

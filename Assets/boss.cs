@@ -13,6 +13,12 @@ public class boss : MonoBehaviour
     public float debangdelay;
     public float shootAngle;
     float time;
+    public int maxhp;
+    int hp;
+    public GameObject hpprefab;
+    public float hpx;
+    public float hpy;
+    GameObject hpui;
     void Start ()
     {
         randomPos.x = Random.Range(-8.0f, 8.0f);
@@ -21,7 +27,13 @@ public class boss : MonoBehaviour
 
         direction = randomPos - transform.position;
         direction.Normalize();
-	}
+        hp = maxhp;
+        hpui = Instantiate(hpprefab);
+
+        GameObject canvas = GameObject.Find("Canvas");
+        hpui.transform.SetParent(canvas.transform);
+        hpui.transform.localPosition = new Vector3(hpx, hpy);
+    }
 	
 	void Update ()
     {
@@ -70,6 +82,16 @@ public class boss : MonoBehaviour
             newPosition += direction * SpeedY * Time.deltaTime;
 
             transform.position = newPosition;
+        }
+    }
+    public void damage()
+    {
+        hp--;
+        hpui.transform.localScale = new Vector3(1.0f, (float)hp / maxhp);
+        if (hp <= 0)
+        {
+            Destroy(hpui);
+            Destroy(gameObject);
         }
     }
 }

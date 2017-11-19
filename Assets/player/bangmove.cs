@@ -29,5 +29,10 @@ public class bangmove : MonoBehaviour
             GameObject maker = GameObject.FindGameObjectWithTag("enemymaker");
             maker.GetComponent<deobject>().killcount++;
         }
+        else if (collider.tag == "boss")
+        {
+            Destroy(gameObject);
+            collider.gameObject.GetComponent<boss>().damage();
+        }
     }
 }
