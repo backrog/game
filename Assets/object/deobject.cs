@@ -6,11 +6,11 @@ public class deobject : MonoBehaviour
 {
     public GameObject SomePefab;
     public float delay;
-    float time;
+    public float time;
     public int killcount;
     public int boss;
     public GameObject bossprefab;
-    bool bossspawn;
+    public bool bossspawn;
 	void Update ()
     {
         if (!bossspawn && time >= delay)

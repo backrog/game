@@ -37,6 +37,10 @@ public class player : MonoBehaviour
 
     public void damage()
     {
+        if (life.Count == 0)
+        {
+            return;
+        }
         Destroy(life[life.Count - 1]);
         life.RemoveAt(life.Count - 1);
 

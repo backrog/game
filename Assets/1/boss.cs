@@ -90,6 +90,9 @@ public class boss : MonoBehaviour
         hpui.transform.localScale = new Vector3(1.0f, (float)hp / maxhp);
         if (hp <= 0)
         {
+            GameObject maker = GameObject.FindGameObjectWithTag("enemymaker");
+            maker.GetComponent<deobject>().bossspawn = false;
+            maker.GetComponent<deobject>().time =0.0f;
             Destroy(hpui);
             Destroy(gameObject);
         }
